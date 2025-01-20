@@ -1,6 +1,6 @@
-package med.voll.api.controller;
+package med.voll.api.controllers;
 
-import med.voll.api.dto.DtoCadastroMedico;
+import med.voll.api.dtos.DtoCadastroMedico;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +12,6 @@ public class MedicoController {
 
     @PostMapping
     public String create(@RequestBody DtoCadastroMedico dtoCadastroMedico) {
-        return "";
+        return dtoCadastroMedico.toString();
     }
 }
