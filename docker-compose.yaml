@@ -7,15 +7,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+      - "5005:5005"
     volumes:
-      - ./src:/home/app/src
-      - ./pom.xml:/home/app/pom.xml
-      - ~/.m2:/root/.m2
+      - .:/app
     command: mvn spring-boot:run
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/vollmed_api
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
+    env_file:
+      - .env
     depends_on:
       - db
 
