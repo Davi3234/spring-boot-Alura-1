@@ -12,7 +12,6 @@ import med.voll.api.enums.Especialidade;
 @Table(name="medicos")
 @Entity()
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Medico {
@@ -21,15 +20,21 @@ public class Medico {
     private Long id;
     private String nome;
     private String email;
+    private String telefone;
     private String crm;
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
     @Embedded
     private Endereco endereco;
 
+    public Medico(){
+
+    }
+
     public Medico(DtoCadastroMedico dtoCadastroMedico) {
         this.nome = dtoCadastroMedico.nome();
         this.email = dtoCadastroMedico.email();
+        this.telefone = dtoCadastroMedico.telefone();
         this.crm = dtoCadastroMedico.crm();
         this.especialidade = dtoCadastroMedico.especialidade();
         this.endereco = new Endereco(dtoCadastroMedico.endereco());
