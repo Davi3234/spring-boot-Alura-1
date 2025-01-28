@@ -1,5 +1,5 @@
 # spring-boot-Alura-1
-Este é um repositório dedicado ao Curso da Alura de Spring Boot Inicial.
+Este é um repositório dedicado ao Curso da Alura de Spring Boot Completo.
 
 ## Objetivo
 - Criar uma API Rest;
